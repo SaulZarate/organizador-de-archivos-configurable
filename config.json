@@ -1,0 +1,61 @@
+{
+    "extensions" : {
+        "video" : [
+            ".wm",
+            ".wmv",	
+            ".rpm",
+            ".mov",
+            ".qt",
+            ".qtl",	
+            ".m1v",
+            ".mp2v",
+            ".mp4",
+            ".mpa",
+            ".mpe",
+            ".mpeg",
+            ".mpg",
+            ".mpv2",
+            ".ivf",	
+            ".dvd",
+            ".wob",	
+            ".div", 
+            ".divx",
+            ".bik",
+            ".smk",	
+            ".avi",	
+            ".asf",
+            ".lsf",
+            ".asx"
+        ],
+        "image" : [
+            ".jpeg",
+            ".jpg",
+            ".gif",
+            ".png",
+            ".tiff",
+            ".tif",
+            ".pdf",
+            ".eps",
+            ".svg",
+            ".nmp",
+            ".psd",
+            ".ai",
+            ".raw"
+        ],
+        "audio" : [
+            ".mp3",
+            ".mid", 
+            ".midi",
+            ".wav",
+            ".wma",
+            ".cda",
+            ".ogg",
+            ".ogm",
+            ".aac",
+            ".ac3",
+            ".flac",
+            ".mp4",
+            ".aym"
+        ]
+    }
+}
