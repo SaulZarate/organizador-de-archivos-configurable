@@ -1,2 +1,11 @@
 Extensiones para video, audio y imagen
 https://es.wikipedia.org/wiki/Extensi%C3%B3n_de_archivo#Extensiones_de_audio
+
+Obtener datos de un archivo json en Python
+https://daviddelatorre.me/json-con-python-obtener-los-datos/
+
+Parsear datos json en Python
+https://www.w3schools.com/python/python_json.asp
+
+Manipulacion de archivos 
+https://entrenamiento-python-basico.readthedocs.io/es/latest/leccion7/archivos.html

@@ -1,6 +1,6 @@
 {
     "extensions" : {
-        "video" : [
+        "videos" : [
             ".wm",
             ".wmv",	
             ".rpm",
@@ -27,7 +27,7 @@
             ".lsf",
             ".asx"
         ],
-        "image" : [
+        "imagenes" : [
             ".jpeg",
             ".jpg",
             ".gif",
@@ -42,7 +42,7 @@
             ".ai",
             ".raw"
         ],
-        "audio" : [
+        "audios" : [
             ".mp3",
             ".mid", 
             ".midi",
@@ -56,6 +56,11 @@
             ".flac",
             ".mp4",
             ".aym"
+        ],
+        "comprimidos" : [
+            ".rar",
+            ".zip"
         ]
-    }
+    },
+    "folderToOrganize" : "C:\\Users\\PC 345\\Downloads"
 }
