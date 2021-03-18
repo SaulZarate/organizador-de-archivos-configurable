@@ -9,3 +9,6 @@ https://www.w3schools.com/python/python_json.asp
 
 Manipulacion de archivos 
 https://entrenamiento-python-basico.readthedocs.io/es/latest/leccion7/archivos.html
+
+Modulo shutil
+https://docs.python.org/es/3.8/library/shutil.html
