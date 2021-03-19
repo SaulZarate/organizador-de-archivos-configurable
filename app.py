@@ -17,13 +17,14 @@ files = utils.getFiles(directionFolder)
 # Verifico que la carpeta tenga archivos 
 if len(files) > 0:
 
-    """ Si no existen las carpetas las creo """
-    utils.createFolders(directionFolder, extensions.keys())
+    # Si no existen las carpetas las creo
+    utils.createFolders(directionFolder, data)
 
-    """ Mover archivos a sus carpetas correspondientes """
+    # Mover archivos a sus carpetas correspondientes
     for fileName in files:
         # Carpeta a la que pertenece cada archivo
         folder = utils.searchFolder(fileName, extensions)
+        
         # Muevo los archivos a sus carpetas
         utils.moveFiles(directionFolder, fileName, folder)
 

@@ -27,7 +27,7 @@
             ".lsf",
             ".asx"
         ],
-        "imagenes" : [
+        "images" : [
             ".jpeg",
             ".jpg",
             ".gif",
@@ -57,10 +57,14 @@
             ".mp4",
             ".aym"
         ],
-        "comprimidos" : [
+        "compacteds" : [
             ".rar",
             ".zip"
         ]
+    },
+    "others" : {
+        "inFolder" : true,
+        "nameFolder" : "otros"
     },
     "folderToOrganize" : "C:\\Users\\PC 345\\Downloads"
 }
