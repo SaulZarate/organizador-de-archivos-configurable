@@ -1,5 +1,4 @@
 
-# Importo mis funciones
 import utils
 
 """ Obtenemos los datos necesarios del archivo Json """
