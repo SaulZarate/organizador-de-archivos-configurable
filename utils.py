@@ -2,6 +2,7 @@ import os
 import json
 import shutil
 
+# Return void
 def createFolders(direction, dataJson):
     extensions = dataJson["extensions"]
     others = dataJson["others"]
@@ -14,6 +15,7 @@ def createFolders(direction, dataJson):
         if not os.path.isdir(direction+"\\"+others["nameFolder"]):
             os.makedirs(direction+"\\"+others["nameFolder"], 777)
 
+# Return array
 def getFiles(directionFolder):
     listDir = os.listdir(directionFolder)
     files = []
@@ -22,11 +24,13 @@ def getFiles(directionFolder):
             files.append(i)
     return files
 
+# return dictionary
 def getDataConfig():
     file = open('config.json')
     dataConfigJson = file.read()
     return json.loads(dataConfigJson)
 
+# return String
 def searchFolder(fileName, extensiones):
     others = getDataConfig()["others"]
     for key,value in extensiones.items():
@@ -37,8 +41,9 @@ def searchFolder(fileName, extensiones):
     Devuelvo el nombre de la carpeta o un string vacio """
     return other["nameFolder"] if other["inFolder"] else ""
 
+# return void
 def moveFiles(directionFolder, fileName, folderName):
-    # Si es False no se mueve el archivo
+    # Si la carpeta esta vacia no muevo el archivo
     if folderName == "":
         return
 

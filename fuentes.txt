@@ -12,3 +12,6 @@ https://entrenamiento-python-basico.readthedocs.io/es/latest/leccion7/archivos.h
 
 Modulo shutil
 https://docs.python.org/es/3.8/library/shutil.html
+
+Modulo pprint
+https://docs.python.org/3/library/pprint.html
