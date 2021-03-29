@@ -91,6 +91,26 @@ DATA = {
 """ ~~~~~~~~~~~~~~~~~~~~~~~~ FUNCIONES ~~~~~~~~~~~~~~~~~~~~~~~~ """
 """ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ """
 
+def cleanArrayFiles(files):
+    filesArray = []
+    for i in files:
+        if os.path.isfile(i):
+            filesArray.append(i)
+    
+    # Obtener el nombre del archivo actual
+    fileName = os.path.split(os.path.abspath(__file__))[1]
+    # Otra forma de hacerlo => # fullPathName = __file__.split("\\")[-1] 
+
+    # Eliminar el nombre del archivo actual del array de archivos
+    filesArray.remove(fileName)
+
+    # Elimino el archivo ejecutable del array
+    fileNameExe = fileName[0:fileName.rfind(".")]+".exe"
+    if os.path.isfile(fileNameExe):
+        filesArray.remove(fileNameExe)
+
+    return filesArray
+
 def getExtension(filesName):
     indexExtension = filesName.rfind(".")
     extension = filesName[indexExtension:len(filesName)]
@@ -139,12 +159,8 @@ def main():
     # Obtener los archivos de la carpeta
     files = os.listdir(srcFolder)
 
-    # Obtener el nombre del archivo actual
-    fileNameExe = os.path.split(os.path.abspath(__file__))[1]
-    # Otra forma de hacerlo => # fullPathName = __file__.split("\\")[-1] 
-
-    # Eliminar el nombre del archivo actual del array de archivos
-    files.remove(fileNameExe)
+    # Elimino el archivo exe y las carpetas ( filtro el array )
+    files = cleanArrayFiles(files)
 
     if len(files) > 0:
         # Obtengo los archivos con sus carpetas correcpondientes
@@ -152,7 +168,7 @@ def main():
 
         # Creo las carpetas y muevo los archivos
         createFoldersAndMoveFiles(filesAndFolders)
-
+    
 """ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ """
 """ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ """
 """ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ """
