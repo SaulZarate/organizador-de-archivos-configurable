@@ -89,7 +89,7 @@ def main():
     # Contenido de la carpeta en array
     files = getContentFolder(srcFolder)
     
-    # Elimino el archivo .exe, .py, las carpetas y el archivo de configuracion .json
+    # Solo guardo los archivos. Elimino las carpetas del array
     files = cleanArrayFiles(files)
 
     if len(files) > 0:
