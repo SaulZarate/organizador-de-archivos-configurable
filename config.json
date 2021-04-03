@@ -1,0 +1,84 @@
+{
+    "folderAddress" : "c://Users/PC 345/Desktop/Integracion_tecnologica/organizadorDeArchivosV2",
+    "folders" : {
+        "videos" : [
+            ".wm",
+            ".wmv",	
+            ".rpm",
+            ".mov",
+            ".qt",
+            ".qtl",	
+            ".m1v",
+            ".mp2v",
+            ".mp4",
+            ".mpa",
+            ".mpe",
+            ".mpeg",
+            ".mpg",
+            ".mpv2",
+            ".ivf",	
+            ".dvd",
+            ".wob",	
+            ".div", 
+            ".divx",
+            ".bik",
+            ".smk",	
+            ".avi",	
+            ".asf",
+            ".lsf",
+            ".asx"
+        ],
+        "images" : [
+            ".jpeg",
+            ".jpg",
+            ".gif",
+            ".png",
+            ".tiff",
+            ".tif",
+            ".pdf",
+            ".eps",
+            ".svg",
+            ".nmp",
+            ".psd",
+            ".ai",
+            ".raw"
+        ],
+        "audios" : [
+            ".mp3",
+            ".mid", 
+            ".midi",
+            ".wav",
+            ".wma",
+            ".cda",
+            ".ogg",
+            ".ogm",
+            ".aac",
+            ".ac3",
+            ".flac",
+            ".aym"
+        ],
+        "compacteds" : [
+            ".rar",
+            ".zip"
+        ],
+        "microsoft_Office" : [
+            ".docx",
+            ".docm",
+            ".dotx",
+            ".dotm",
+            ".doc",
+            ".dot",
+            ".xls",
+            ".xlsx",
+            ".xlsm",
+            ".ppt",
+            ".pps",
+            ".pptx",
+            ".ppsx"
+        ]
+    },
+    "others" : {
+        "inFolder" : true,
+        "nameFolder" : "otros"
+    }
+}
