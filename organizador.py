@@ -1,52 +1,41 @@
 import os
 import shutil
 import json
-import pprint
 
 def getDataConfigJson( nameFile ):
     fileJson = open(nameFile)
     dataFile = fileJson.read()
     return json.loads(dataFile)
 
-DATA = getDataConfigJson( "config.json" )
+def checkAddress( address ):
+    return  address if address[len(address)-1] == "/" else address + "/"
+
 
 # CONSTANTES
-FOLDER_ADDRESS = DATA["folderAddress"]
+DATA = getDataConfigJson( "config.json" )
+FOLDER_ADDRESS = checkAddress( DATA["folderAddress"] )
 FOLDERS = DATA["folders"]
 OTHERS = DATA["others"]
 NAME_FOLDER_OTHERS_FILES = "" if not OTHERS["inFolder"] else OTHERS["nameFolder"] 
-
-pprint.pprint( os.listdir(FOLDER_ADDRESS) )
-
-""" pprint.pprint( FOLDER_ADDRESS )
-pprint.pprint( FOLDERS )
-pprint.pprint( OTHERS ) """
 
 
 """ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ """
 """ ~~~~~~~~~~~~~~~~~~~~~~~~ FUNCIONES ~~~~~~~~~~~~~~~~~~~~~~~~ """
 """ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ """
 
+def getContentFolder(srcFolder):
+    if os.path.isdir(FOLDER_ADDRESS) :
+        return os.listdir(FOLDER_ADDRESS)
+    exit()
+
 def getAddressFolder():
-    return os.getcwd()
+    return FOLDER_ADDRESS
 
 def cleanArrayFiles(files):
     filesArray = []
     for i in files:
-        if os.path.isfile(i):
+        if os.path.isfile(FOLDER_ADDRESS+i):
             filesArray.append(i)
-    
-    # Obtener el nombre del archivo actual
-    fileName = os.path.split(os.path.abspath(__file__))[1]
-    # Otra forma de hacerlo => # fullPathName = __file__.split("\\")[-1] 
-
-    # Eliminar el nombre del archivo actual
-    filesArray.remove(fileName)
-    # Elimino el archivo ejecutable
-    fileNameExe = fileName[0:fileName.rfind(".")]+".exe"
-    filesArray.remove(fileNameExe)
-    # Elimino el archivo de configuracion
-    filesArray.remove("config.json")
 
     return filesArray
 
@@ -61,16 +50,14 @@ def getFolder(extension):
     for fol,ext in FOLDERS.items():
         if extension in ext:
             folder = fol
-
     return folder
 
 def getFilesAndFolders(files):
     dicc = {}
     for fileName in files:
         extension = getExtension(fileName)
-        dicc[fileName] = getFolder(extension)
+        dicc[FOLDER_ADDRESS+fileName] = FOLDER_ADDRESS+getFolder(extension)
     return dicc
-
 
 def cleanDictionaryFiles( files ):
     newFiles = {}
@@ -88,6 +75,7 @@ def moveFile(fileName, folderName):
         shutil.move(fileName, folderName)
 
 def createFoldersAndMoveFiles(filesAndFolders):
+    pprint.pprint(filesAndFolders)
     for file,folder in filesAndFolders.items():
         # Creo la carpeta si es necesario
         createFolder(folder)
@@ -99,8 +87,8 @@ def main():
     srcFolder = getAddressFolder()
 
     # Contenido de la carpeta en array
-    files = os.listdir(srcFolder)
-
+    files = getContentFolder(srcFolder)
+    
     # Elimino el archivo .exe, .py, las carpetas y el archivo de configuracion .json
     files = cleanArrayFiles(files)
 
@@ -117,4 +105,4 @@ def main():
 
 
 # Ejecuto el proyecto
-#main()
+main()
