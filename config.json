@@ -1,5 +1,5 @@
 {
-    "folderAddress" : "Ingrese la direccion de la carpeta",
+    "folderAddress" : "...",
     "folders" : {
         "videos" : [
             ".wm",
@@ -76,8 +76,8 @@
             ".pptx",
             ".ppsx"
         ]
-    },
-    "others" : {
+    }
+    ,"others" : {
         "inFolder" : true,
         "nameFolder" : "otros"
     }
