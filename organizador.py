@@ -12,7 +12,7 @@ def checkAddress( address ):
 
 
 # CONSTANTES
-DATA = getDataConfigJson( "config.json" )
+DATA = getDataConfigJson( "./config.json" )
 FOLDER_ADDRESS = checkAddress( DATA["folderAddress"] )
 FOLDERS = DATA["folders"]
 OTHERS = DATA["others"]
@@ -26,6 +26,8 @@ NAME_FOLDER_OTHERS_FILES = "" if not OTHERS["inFolder"] else OTHERS["nameFolder"
 def getContentFolder(srcFolder):
     if os.path.isdir(FOLDER_ADDRESS) :
         return os.listdir(FOLDER_ADDRESS)
+    print("No se encontro la carpeta")
+    input("Algo salio mal")
     exit()
 
 def getAddressFolder():
@@ -75,7 +77,6 @@ def moveFile(fileName, folderName):
         shutil.move(fileName, folderName)
 
 def createFoldersAndMoveFiles(filesAndFolders):
-    pprint.pprint(filesAndFolders)
     for file,folder in filesAndFolders.items():
         # Creo la carpeta si es necesario
         createFolder(folder)

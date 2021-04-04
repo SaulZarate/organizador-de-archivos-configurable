@@ -1,5 +1,5 @@
 {
-    "folderAddress" : "",
+    "folderAddress" : "Ingrese la direccion de la carpeta",
     "folders" : {
         "videos" : [
             ".wm",
