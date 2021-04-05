@@ -5,13 +5,14 @@ _El proyecto se encarga de separar los archivos de una carpeta y moverlos a su c
 ## Pre-requisitos 📋
 
 ```
-Tener Windows como sistema operativo
+Tener Window como sistema operativo
 ```
 
 ## Comenzando 🚀
 
 _Para utilizar este proyecto tiene que descargar este repositorio, configurar el archivo **config.json** y finalmente ejecutar el archivo organizador.exe_
 
+_**Importante: Los archivos de config.json y organizador.exe deben permanecer en la misma carpeta**_
 
 ## Instalación/Descarga del proyecto 🔧
 
@@ -31,7 +32,7 @@ git clone https://github.com/SaulZarate/Python-organizadorDeArchivos.git
 ### Segunda forma - Descargar un .ZIP
 * Dirijase a la parte superior de la página y presione click en el boton verde que dice Code
 * Luego presione Download ZIP
-* Dirijase a la carpeta donde se descargo el archivo .ZIP y descomprimalo
+* Dirijase a la carpeta donde se descargo el archivo .ZIP y luego descomprima el archivo
 
 ## Despliegue 📦
 * Copie la direccion de la carpeta que desee organizar (puede usar rutas absolutas o relativas)
