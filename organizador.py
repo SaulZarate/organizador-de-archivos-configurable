@@ -23,20 +23,24 @@ NAME_FOLDER_OTHERS_FILES = "" if not OTHERS["inFolder"] else OTHERS["nameFolder"
 """ ~~~~~~~~~~~~~~~~~~~~~~~~ FUNCIONES ~~~~~~~~~~~~~~~~~~~~~~~~ """
 """ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ """
 
+# Valida que el path de la carpeta sea correcto 
+# y devuelve un array con los nombres de los 
+# archivos que contiene
+#
+# return [] | termina el script
 def getContentFolder(srcFolder):
-    if os.path.isdir(FOLDER_ADDRESS) :
+    if os.path.isdir(FOLDER_ADDRESS):
         return os.listdir(FOLDER_ADDRESS)
     exit()
 
-def getAddressFolder():
-    return FOLDER_ADDRESS
-
+# Valida los archivos
+# return []
 def cleanArrayFiles(files):
     filesArray = []
     for i in files:
-        if os.path.isfile(FOLDER_ADDRESS+i):
+        pathFileCurrent = FOLDER_ADDRESS+i 
+        if os.path.isfile(pathFileCurrent):
             filesArray.append(i)
-
     return filesArray
 
 def getExtension(filesName):
@@ -75,19 +79,17 @@ def moveFile(fileName, folderName):
         shutil.move(fileName, folderName)
 
 def createFoldersAndMoveFiles(filesAndFolders):
-    pprint.pprint(filesAndFolders)
     for file,folder in filesAndFolders.items():
         # Creo la carpeta si es necesario
         createFolder(folder)
         # Muevo el archivo a la carpeta
         moveFile(file, folder)
 
-def main():
-    # Obtener la direccion de la carpeta actual
-    srcFolder = getAddressFolder()
 
+# Main
+def main():
     # Contenido de la carpeta en array
-    files = getContentFolder(srcFolder)
+    files = getContentFolder(FOLDER_ADDRESS)
     
     # Solo guardo los archivos. Elimino las carpetas del array
     files = cleanArrayFiles(files)
@@ -95,7 +97,7 @@ def main():
     if len(files) > 0:
         # Obtengo los archivos con sus carpetas correcpondientes y filtrados
         filesAndFolders = cleanDictionaryFiles( getFilesAndFolders(files) )
-
+        
         # Creo las carpetas y muevo los archivos
         createFoldersAndMoveFiles(filesAndFolders)
     
